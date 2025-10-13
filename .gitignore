@@ -1,0 +1,18 @@
+# --- project ignores ---
+.env
+uploads/
+weights/*.cache
+
+# python
+__pycache__/
+*.pyc
+.venv/
+wastevision_env/
+
+# node
+node_modules/
+dist/
+.vite/
+
+# mac
+.DS_Store
