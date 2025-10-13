@@ -16,3 +16,7 @@ dist/
 
 # mac
 .DS_Store
+
+# ignore venv
+wastevision_env/
+
