@@ -2,13 +2,20 @@
     BASE STYLES & RESET
    ======================================== */
 
-html, body {
+html, body, #root{
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 body {
     font-family: "Segoe UI", sans-serif;
+}
+
+.app-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ========================================
@@ -22,7 +29,7 @@ nav {
     align-items: center;
 }
 
-/* Navbar container */
+/* Navbar Container */
 .nav-container {
     display: flex;
     align-items: center;
@@ -35,7 +42,7 @@ nav {
     flex: 1;
 }
 
-/* Center: Main navigation links" */
+/* Center: Main Navigation Links" */
 .nav-menu {
     flex: 1;
     list-style: none;
@@ -64,11 +71,24 @@ nav {
     gap: 4rem;
 }
 
-/* Navbar link styles */
+/* Navbar Link Styles */
 .nav-link,
 .nav-logo-link,
 .nav-sign-in,
 .nav-search {
     color: white;
     text-decoration: none;
+}
+
+/* ========================================
+    FOOTER STYLES
+   ======================================== */
+
+.footer {
+    background-color: #0E1C4A;
+    color: white;
+		font-size: 0.9rem; 
+    text-align: center;
+    margin-top: auto;
+		padding: 0.7rem;
 }
