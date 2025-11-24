@@ -54,11 +54,11 @@ nav {
     margin: 0;
 }
 
-.nav-item {
+.nav-link {
     transition: color 0.15s ease;
 }
 
-.nav-item:hover {
+.nav-link:hover {
     color: #AECBFA;
 }
 
