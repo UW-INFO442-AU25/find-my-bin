@@ -19,15 +19,6 @@ import {
 import "../styles/Quiz.css";
 import "../App.css";
 
-/*
-  Quiz.jsx
-  - Uses new dataset structure: categories -> itemGroups -> items
-  - Randomizes conditions (cleanliness, shape) for items with skipConditions=false
-  - Evaluates rules in order; first match wins
-  - Persists per-question history to users/{uid}/history
-  - Lifetime score updated with increment()
-*/
-
 const POINT_TIERS = [
   { sec: 5, pts: 100 },
   { sec: 10, pts: 75 },
@@ -50,19 +41,16 @@ function normalizeBin(bin) {
 
 // Evaluate rules in order; first match wins
 function determineBinFromRules(item, cleanliness, shape) {
-  // If skipConditions true, use defaultBin (or fallback) immediately
   if (item.skipConditions) {
     return normalizeBin(item.defaultBin || item.default || null);
   }
 
-  // If item has rules array, check each
   const rules = item.rules || [];
   for (const rule of rules) {
     const cond = rule.if || {};
     let match = true;
 
     if (cond.cleanliness) {
-      // exact match required
       if (cleanliness !== cond.cleanliness) match = false;
     }
     if (cond.shape) {
@@ -84,8 +72,8 @@ function pickRandomFrom(arr) {
 }
 
 export default function Quiz() {
-  const [items, setItems] = useState([]); // base items (no randomized conditions)
-  const [current, setCurrent] = useState(null); // current question (with randomized conditions + correct)
+  const [items, setItems] = useState([]); 
+  const [current, setCurrent] = useState(null);
   const [choicesDisabled, setChoicesDisabled] = useState(false);
   const [answerResult, setAnswerResult] = useState("");
   const [score, setScore] = useState(0);
@@ -114,7 +102,6 @@ export default function Quiz() {
         if (raw?.categories) {
           for (const cat of raw.categories) {
             for (const group of cat.itemGroups || []) {
-              // group may have .items (new format) or .materials (legacy); handle both
               if (group.items) {
                 for (const item of group.items) {
                   list.push({
@@ -125,12 +112,10 @@ export default function Quiz() {
                     rules: item.rules || null,
                     defaultBin: item.defaultBin || item.default || null,
                     tags: item.tags || [],
-                    // keep original raw item so rules/allowedConditionValues available later
                     _raw: item,
                   });
                 }
               }
-              // legacy: materials property (support backwards compatibility)
               if (group.materials) {
                 for (const matName of Object.keys(group.materials)) {
                   for (const item of group.materials[matName]) {
@@ -170,7 +155,6 @@ export default function Quiz() {
       mountedRef.current = false;
       clearInterval(intervalRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // --------------- auth / lifetime ---------------
@@ -243,7 +227,7 @@ export default function Quiz() {
   function generateQuestion(baseItem) {
     if (!baseItem) return null;
 
-    const item = baseItem; // baseItem includes allowedConditionValues, rules, skipConditions, defaultBin
+    const item = baseItem;
     let cleanliness = null;
     let shape = null;
 
@@ -275,7 +259,7 @@ export default function Quiz() {
     if (!current) return;
     clearInterval(intervalRef.current);
 
-    // treat 'landfill' as 'trash' for comparison
+    // treat 'landfill' as 'trash'
     const normalize = (s) => (s === "landfill" ? "trash" : (s || "").toLowerCase());
     const isCorrect = normalize(choice) === normalize(current.correct);
 
@@ -312,7 +296,6 @@ export default function Quiz() {
       try {
         await updateDoc(userRef, { lifetimeScore: increment(points) });
       } catch (e) {
-        // if update fails for some reason, fallback to set
         console.error("increment failed, falling back:", e);
         const currentSnap = await getDoc(userRef);
         const prev = currentSnap.exists() ? currentSnap.data().lifetimeScore || 0 : 0;
@@ -342,7 +325,7 @@ export default function Quiz() {
       if (refreshed.exists()) setLifetimeScore(refreshed.data().lifetimeScore || 0);
       loadLeaderboard();
     } else {
-      // guest: store local history in localStorage (optional)
+      // guest: store local history in localStorage
       const local = JSON.parse(localStorage.getItem("trashquiz_local_history") || "[]");
       local.unshift({
         timestamp: Date.now(),
@@ -386,7 +369,6 @@ export default function Quiz() {
 
   useEffect(() => {
     if (showProgress) loadHistory();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showProgress]);
 
   // --------------- filtered history ---------------
