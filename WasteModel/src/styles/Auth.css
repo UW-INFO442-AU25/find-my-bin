@@ -4,32 +4,33 @@
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* green gradient */
+  background: linear-gradient(135deg, #1e7a4a 0%, #2bb673 100%);
 }
 
 .auth-card {
-  background: white;
+  background: #ffffff;
   border-radius: 10px;
   padding: 40px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   width: 100%;
   max-width: 450px;
 }
 
 .auth-card h1 {
   text-align: center;
-  color: #333;
+  color: #0f3b2a;
   margin-bottom: 30px;
   font-size: 28px;
 }
 
 .error-message {
-  background-color: #fee;
-  color: #c33;
+  background-color: #fff0f0;
+  color: #b32b2b;
   padding: 12px;
   border-radius: 5px;
   margin-bottom: 20px;
-  border: 1px solid #fcc;
+  border: 1px solid #ffd6d6;
   text-align: center;
 }
 
@@ -40,7 +41,7 @@
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  color: #555;
+  color: #2b6b4a;
   font-weight: 500;
   font-size: 14px;
 }
@@ -48,35 +49,37 @@
 .form-group input {
   width: 100%;
   padding: 12px;
-  border: 2px solid #e0e0e0;
-  border-radius: 5px;
+  border: 2px solid #e6f3ec;
+  border-radius: 6px;
   font-size: 16px;
-  transition: border-color 0.3s;
+  transition: border-color 0.2s, box-shadow 0.2s;
   box-sizing: border-box;
+  background: #fbfffc;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #2bb673;
+  box-shadow: 0 0 0 4px rgba(43, 182, 115, 0.08);
 }
 
 .auth-button {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2bb673 0%, #158247 100%);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
+  transition: transform 0.15s, opacity 0.15s, box-shadow 0.15s;
   margin-top: 10px;
 }
 
 .auth-button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 6px 18px rgba(39, 142, 89, 0.25);
 }
 
 .auth-button:disabled {
@@ -90,12 +93,12 @@
 }
 
 .auth-footer p {
-  color: #666;
+  color: #516a57;
   font-size: 14px;
 }
 
 .auth-footer a {
-  color: #667eea;
+  color: #2bb673;
   text-decoration: none;
   font-weight: 600;
 }

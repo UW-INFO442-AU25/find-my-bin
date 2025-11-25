@@ -1,3 +1,4 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import Navbar from './components/Navbar';
@@ -6,9 +7,10 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Quiz from './pages/Quiz';
+import '../src/index.css';
 import './App.css';
 
-function App() {
+function App({ children }) {
   return (
     <AuthProvider>
       <div className="app-container">
@@ -20,6 +22,7 @@ function App() {
           <Route path="/quiz" element={<Quiz />} />
         </Routes>
         <Footer />
+        {children || null}
       </div>
     </AuthProvider>
   );
