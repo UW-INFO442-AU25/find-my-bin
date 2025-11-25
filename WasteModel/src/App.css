@@ -80,6 +80,27 @@ nav {
     text-decoration: none;
 }
 
+/* User info and logout button */
+.nav-user {
+    color: white;
+    margin-right: 1rem;
+}
+
+.nav-sign-out {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 1rem;
+    padding: 0;
+    transition: color 0.15s ease;
+}
+
+.nav-sign-out:hover {
+    color: #AECBFA;
+}
+
 /* ========================================
     FOOTER STYLES
    ======================================== */
