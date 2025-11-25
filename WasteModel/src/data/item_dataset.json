@@ -1,56 +1,82 @@
 {
-  "categories": [
-    {
-      "id": 1,
-      "name": "Food & Drink",
-      "itemGroups": [
-        {
-          "id": 101,
-          "name": "Cups",
-          "materials": {
-            "Plastic Cup": [
+    "categories": [
+      {
+        "id": 1,
+        "name": "Food & Drink",
+        "itemGroups": [
+          {
+            "name": "Cups",
+            "items": [
               {
                 "name": "Plastic Drink Cup",
                 "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Recycle" }
+                ],
                 "tags": [
                   "cup",
-                  "disposable plastic",
-                  "drink",
                   "plastic",
-                  "plastic drink cup",
-                  "plastic item"
+                  "disposable plastic",
+                  "plastic drink cup"
                 ]
-              }
-            ],
-            "Paper Cup": [
+              },
               {
                 "name": "Paper Cup",
                 "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Compost" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Compost" }
+                ],
                 "tags": [
                   "cup",
                   "paper",
-                  "paper cup",
-                  "paper item"
+                  "paper cup"
                 ]
-              }
-            ],
-            "Compostable PLA Cup": [
+              },
               {
                 "name": "Compostable PLA Cup",
                 "skipConditions": true,
                 "defaultBin": "Compost",
                 "tags": [
-                  "compostable",
-                  "compostable pla cup",
                   "cup",
-                  "pla"
+                  "compostable",
+                  "pla",
+                  "compostable pla cup"
                 ]
-              }
-            ],
-            "Styrofoam Cup": [
+              },
               {
                 "name": "Styrofoam Cup",
-                "skipConditions": false,
+                "skipConditions": true,
+                "defaultBin": "Landfill",
                 "tags": [
                   "cup",
                   "styrofoam",
@@ -58,38 +84,65 @@
                 ]
               }
             ]
-          }
-        },
-        {
-          "id": 102,
-          "name": "Plates",
-          "materials": {
-            "Paper Plate": [
+          },
+          {
+            "name": "Plates",
+            "items": [
               {
                 "name": "Paper Plate",
                 "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Compost" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Compost" }
+                ],
                 "tags": [
                   "paper",
-                  "paper item",
                   "paper plate",
                   "plate"
                 ]
-              }
-            ],
-            "Plastic Plate": [
+              },
               {
                 "name": "Plastic Plate",
                 "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Recycle" }
+                ],
                 "tags": [
-                  "disposable plastic",
                   "plastic",
-                  "plastic item",
                   "plastic plate",
-                  "plate"
+                  "plate",
+                  "disposable plastic"
                 ]
-              }
-            ],
-            "Compostable Plate": [
+              },
               {
                 "name": "Compostable Plate",
                 "skipConditions": true,
@@ -101,38 +154,65 @@
                 ]
               }
             ]
-          }
-        },
-        {
-          "id": 103,
-          "name": "Bowls",
-          "materials": {
-            "Paper Bowl": [
+          },
+          {
+            "name": "Bowls",
+            "items": [
               {
                 "name": "Paper Bowl",
                 "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Compost" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Compost" }
+                ],
                 "tags": [
                   "bowl",
                   "paper",
-                  "paper bowl",
-                  "paper item"
+                  "paper bowl"
                 ]
-              }
-            ],
-            "Plastic Bowl": [
+              },
               {
                 "name": "Plastic Bowl",
                 "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Recycle" }
+                ],
                 "tags": [
                   "bowl",
-                  "disposable plastic",
                   "plastic",
                   "plastic bowl",
-                  "plastic item"
+                  "disposable plastic"
                 ]
-              }
-            ],
-            "Compostable Bowl": [
+              },
               {
                 "name": "Compostable Bowl",
                 "skipConditions": true,
@@ -144,174 +224,371 @@
                 ]
               }
             ]
-          }
-        },
-        {
-          "id": 104,
-          "name": "Utensils",
-          "items": [
-            {
-              "name": "Plastic Utensil",
-              "skipConditions": false,
-              "tags": [
-                "disposable plastic",
-                "plastic",
-                "plastic item",
-                "plastic utensil",
-                "utensil"
-              ]
-            },
-            {
-              "name": "Wooden Utensil",
-              "skipConditions": true,
-              "defaultBin": "Compost",
-              "tags": [
-                "utensil",
-                "wooden",
-                "wooden utensil"
-              ]
-            },
-            {
-              "name": "Compostable Utensil",
-              "skipConditions": true,
-              "defaultBin": "Compost",
-              "tags": [
-                "compostable",
-                "compostable utensil",
-                "utensil"
-              ]
-            }
-          ]
-        },
-        {
-          "id": 105,
-          "name": "Straws",
-          "items": [
-            {
-              "name": "Plastic Straw",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "disposable plastic",
-                "plastic",
-                "plastic item",
-                "plastic straw",
-                "straw"
-              ]
-            },
-            {
-              "name": "Paper Straw",
-              "skipConditions": false,
-              "tags": [
-                "paper",
-                "paper item",
-                "paper straw",
-                "straw"
-              ]
-            },
-            {
-              "name": "Compostable Straw",
-              "skipConditions": true,
-              "defaultBin": "Compost",
-              "tags": [
-                "compostable",
-                "compostable straw",
-                "straw"
-              ]
-            }
-          ]
-        },
-        {
-          "id": 106,
-          "name": "Takeout Containers",
-          "materials": {
-            "Plastic": [
+          },
+          {
+            "name": "Utensils",
+            "items": [
+              {
+                "name": "Plastic Utensil",
+                "skipConditions": true,
+                "defaultBin": "Landfill",
+                "tags": [
+                  "utensil",
+                  "plastic",
+                  "plastic utensil",
+                  "disposable plastic"
+                ]
+              },
+              {
+                "name": "Wooden Utensil",
+                "skipConditions": true,
+                "defaultBin": "Compost",
+                "tags": [
+                  "utensil",
+                  "wooden",
+                  "wooden utensil"
+                ]
+              },
+              {
+                "name": "Compostable Utensil",
+                "skipConditions": true,
+                "defaultBin": "Compost",
+                "tags": [
+                  "utensil",
+                  "compostable",
+                  "compostable utensil"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Straws",
+            "items": [
+              {
+                "name": "Plastic Straw",
+                "skipConditions": true,
+                "defaultBin": "Landfill",
+                "tags": [
+                  "straw",
+                  "plastic",
+                  "plastic straw",
+                  "disposable plastic"
+                ]
+              },
+              {
+                "name": "Paper Straw",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Compost" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Compost" }
+                ],
+                "tags": [
+                  "straw",
+                  "paper",
+                  "paper straw"
+                ]
+              },
+              {
+                "name": "Compostable Straw",
+                "skipConditions": true,
+                "defaultBin": "Compost",
+                "tags": [
+                  "straw",
+                  "compostable",
+                  "compostable straw"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Takeout Containers",
+            "items": [
               {
                 "name": "Plastic Takeout Box",
                 "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Recycle" }
+                ],
                 "tags": [
                   "box",
-                  "cardboard",
-                  "disposable plastic",
-                  "plastic",
-                  "plastic item",
+                  "takeout",
                   "plastic takeout box",
-                  "recycling cardboard",
-                  "takeout"
+                  "plastic",
+                  "disposable plastic"
                 ]
-              }
-            ],
-            "Paper": [
+              },
               {
                 "name": "Paper Takeout Box",
                 "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Compost" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Compost" }
+                ],
                 "tags": [
                   "box",
-                  "cardboard",
-                  "paper",
-                  "paper item",
+                  "takeout",
                   "paper takeout box",
-                  "recycling cardboard",
-                  "takeout"
+                  "paper"
                 ]
-              }
-            ],
-            "Compostable": [
+              },
               {
                 "name": "Compostable Takeout Box",
                 "skipConditions": true,
                 "defaultBin": "Compost",
                 "tags": [
                   "box",
-                  "cardboard",
+                  "takeout",
                   "compostable",
-                  "compostable takeout box",
-                  "recycling cardboard",
-                  "takeout"
+                  "compostable takeout box"
+                ]
+              },
+              {
+                "name": "Pizza Box",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Compost" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Compost" }
+                ],
+                "tags": [
+                  "pizza",
+                  "pizza box",
+                  "box",
+                  "cardboard"
+                ]
+              },
+              {
+                "name": "Chip Bag",
+                "skipConditions": true,
+                "defaultBin": "Landfill",
+                "tags": [
+                  "chip bag",
+                  "bag",
+                  "snack bag",
+                  "chips",
+                  "plastic",
+                  "foil-lined"
                 ]
               }
             ]
           },
-          "items": [
-            {
-              "name": "Pizza Box",
-              "skipConditions": false,
-              "tags": [
-                "box",
-                "cardboard",
-                "dominos",
-                "pizza",
-                "pizza box",
-                "pizza hut",
-                "recycling cardboard"
-              ]
-            },
-            {
-              "name": "Chip Bag",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "bag",
-                "cheetos",
-                "chip",
-                "chip bag",
-                "doritos",
-                "lays"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Bottles & Cans",
-      "itemGroups": [
-        {
-          "id": 201,
-          "name": "Cans",
-          "materials": {
-            "Aluminum": [
+          {
+            "name": "Clamshell Containers",
+            "items": [
+              {
+                "name": "Plastic Clamshell Container",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Recycle" }
+                ],
+                "tags": [
+                  "clamshell",
+                  "plastic clamshell",
+                  "container",
+                  "salad container",
+                  "disposable plastic"
+                ]
+              },
+              {
+                "name": "Paperboard Clamshell Container",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Compost" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Compost" }
+                ],
+                "tags": [
+                  "clamshell",
+                  "paperboard clamshell",
+                  "container",
+                  "paper"
+                ]
+              },
+              {
+                "name": "Compostable Clamshell Container",
+                "skipConditions": true,
+                "defaultBin": "Compost",
+                "tags": [
+                  "clamshell",
+                  "compostable",
+                  "container"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Food Wraps",
+            "items": [
+              {
+                "name": "Aluminum Foil",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Recycle" }
+                ],
+                "tags": [
+                  "foil",
+                  "aluminum foil"
+                ]
+              },
+              {
+                "name": "Foil Tray",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Recycle" }
+                ],
+                "tags": [
+                  "foil tray",
+                  "tray",
+                  "foil"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Napkins & Towels",
+            "items": [
+              {
+                "name": "Paper Napkin",
+                "skipConditions": true,
+                "defaultBin": "Compost",
+                "tags": [
+                  "napkin",
+                  "paper napkin",
+                  "tissue"
+                ]
+              },
+              {
+                "name": "Paper Towel",
+                "skipConditions": true,
+                "defaultBin": "Compost",
+                "tags": [
+                  "paper towel",
+                  "towel"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Bottles & Cans",
+        "itemGroups": [
+          {
+            "name": "Cans",
+            "items": [
               {
                 "name": "Soda Can",
                 "skipConditions": true,
@@ -319,9 +596,6 @@
                 "tags": [
                   "aluminum",
                   "can",
-                  "coke",
-                  "metal can",
-                  "pepsi",
                   "soda",
                   "soda can"
                 ]
@@ -333,12 +607,8 @@
                 "tags": [
                   "aluminum",
                   "can",
-                  "drink",
                   "energy",
-                  "energy drink can",
-                  "metal can",
-                  "monster",
-                  "red bull"
+                  "energy drink can"
                 ]
               },
               {
@@ -347,30 +617,50 @@
                 "defaultBin": "Recycle",
                 "tags": [
                   "aluminum",
-                  "beer",
-                  "beer can",
-                  "bud light",
                   "can",
-                  "coors",
-                  "metal can"
+                  "beer",
+                  "beer can"
                 ]
-              }
-            ]
-          }
-        },
-        {
-          "id": 202,
-          "name": "Bottles",
-          "materials": {
-            "Glass": [
+              },
               {
-                "name": "Glass Beverage Bottle",
+                "name": "Tin Can",
                 "skipConditions": true,
                 "defaultBin": "Recycle",
                 "tags": [
-                  "beverage",
-                  "bottle",
+                  "metal",
+                  "tin can",
+                  "can",
+                  "food can"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Bottles",
+            "items": [
+              {
+                "name": "Glass Beverage Bottle",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Chipped",
+                    "Broken",
+                    "Shattered"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Shattered" }, "bin": "Landfill" },
+                  { "if": { "shape": "Broken" }, "bin": "Landfill" },
+                  { "if": { "shape": "Chipped" }, "bin": "Landfill" },
+                  { "if": { "shape": "Intact" }, "bin": "Recycle" }
+                ],
+                "tags": [
                   "glass",
+                  "bottle",
                   "glass beverage bottle"
                 ]
               },
@@ -379,28 +669,22 @@
                 "skipConditions": true,
                 "defaultBin": "Landfill",
                 "tags": [
-                  "bottle",
-                  "broken",
                   "broken glass bottle",
-                  "glass"
+                  "glass",
+                  "bottle",
+                  "broken"
                 ]
-              }
-            ],
-            "Plastic": [
+              },
               {
                 "name": "Plastic Water Bottle",
                 "skipConditions": true,
                 "defaultBin": "Recycle",
                 "tags": [
-                  "aquafina",
-                  "arrowhead",
                   "bottle",
-                  "dasani",
-                  "disposable plastic",
+                  "water",
                   "plastic",
-                  "plastic item",
                   "plastic water bottle",
-                  "water"
+                  "disposable plastic"
                 ]
               },
               {
@@ -409,12 +693,9 @@
                 "defaultBin": "Recycle",
                 "tags": [
                   "bottle",
-                  "darigold",
-                  "disposable plastic",
                   "milk",
-                  "plastic",
-                  "plastic item",
-                  "plastic milk bottle"
+                  "plastic milk bottle",
+                  "plastic"
                 ]
               },
               {
@@ -423,580 +704,397 @@
                 "defaultBin": "Recycle",
                 "tags": [
                   "bottle",
-                  "disposable plastic",
                   "juice",
-                  "plastic",
-                  "plastic item",
                   "plastic juice bottle",
-                  "simply",
-                  "tropicana"
+                  "plastic"
+                ]
+              },
+              {
+                "name": "Glass Jar",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Chipped",
+                    "Broken",
+                    "Shattered"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Shattered" }, "bin": "Landfill" },
+                  { "if": { "shape": "Broken" }, "bin": "Landfill" },
+                  { "if": { "shape": "Chipped" }, "bin": "Landfill" },
+                  { "if": { "shape": "Intact" }, "bin": "Recycle" }
+                ],
+                "tags": [
+                  "glass jar",
+                  "jar",
+                  "glass"
                 ]
               }
             ]
           }
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Packaging & Cardboard",
-      "itemGroups": [
-        {
-          "id": 301,
-          "name": "Boxes",
-          "items": [
-            {
-              "name": "Shipping Box",
-              "skipConditions": false,
-              "tags": [
-                "box",
-                "cardboard",
-                "recycling cardboard",
-                "shipping",
-                "shipping box"
-              ]
-            },
-            {
-              "name": "Pizza Box",
-              "skipConditions": false,
-              "tags": [
-                "box",
-                "cardboard",
-                "dominos",
-                "pizza",
-                "pizza box",
-                "pizza hut",
-                "recycling cardboard"
-              ]
-            },
-            {
-              "name": "Cardboard Tubes",
-              "skipConditions": false,
-              "tags": [
-                "cardboard",
-                "cardboard tubes",
-                "recycling cardboard",
-                "tubes"
-              ]
-            },
-            {
-              "name": "Cardboard Pieces",
-              "skipConditions": false,
-              "tags": [
-                "cardboard",
-                "cardboard pieces",
-                "pieces",
-                "recycling cardboard"
-              ]
-            }
-          ]
-        },
-        {
-          "id": 302,
-          "name": "Soft Plastics",
-          "items": [
-            {
-              "name": "Plastic Wrap",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "disposable plastic",
-                "plastic",
-                "plastic item",
-                "plastic wrap",
-                "wrap"
-              ]
-            },
-            {
-              "name": "Plastic Film",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "disposable plastic",
-                "film",
-                "plastic",
-                "plastic film",
-                "plastic item"
-              ]
-            },
-            {
-              "name": "Plastic Sheets",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "disposable plastic",
-                "plastic",
-                "plastic item",
-                "plastic sheets",
-                "sheets"
-              ]
-            },
-            {
-              "name": "Snack Bag",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "bag",
-                "snack",
-                "snack bag"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Paper Products",
-      "itemGroups": [
-        {
-          "id": 401,
-          "name": "Paper Items",
-          "items": [
-            {
-              "name": "Printer Paper",
-              "skipConditions": false,
-              "tags": [
-                "paper",
-                "paper item",
-                "printer",
-                "printer paper"
-              ]
-            },
-            {
-              "name": "Shredded Paper",
-              "skipConditions": false,
-              "tags": [
-                "paper",
-                "paper item",
-                "shredded",
-                "shredded paper"
-              ]
-            },
-            {
-              "name": "Magazines",
-              "skipConditions": false,
-              "tags": [
-                "magazines"
-              ]
-            },
-            {
-              "name": "Cardstock",
-              "skipConditions": false,
-              "tags": [
-                "cardstock"
-              ]
-            },
-            {
-              "name": "Greeting Cards",
-              "skipConditions": false,
-              "tags": [
-                "cards",
-                "greeting",
-                "greeting cards"
-              ]
-            },
-            {
-              "name": "Paperback Books",
-              "skipConditions": false,
-              "tags": [
-                "books",
-                "paper",
-                "paper item",
-                "paperback",
-                "paperback books"
-              ]
-            },
-            {
-              "name": "Cereal Box",
-              "skipConditions": false,
-              "tags": [
-                "box",
-                "cardboard",
-                "cereal",
-                "cereal box",
-                "recycling cardboard"
-              ]
-            },
-            {
-              "name": "Envelopes",
-              "skipConditions": false,
-              "tags": [
-                "envelopes"
-              ]
-            },
-            {
-              "name": "Sticky Notes",
-              "skipConditions": false,
-              "tags": [
-                "notes",
-                "sticky",
-                "sticky notes"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Household Items",
-      "itemGroups": [
-        {
-          "id": 501,
-          "name": "Personal Care Containers",
-          "items": [
-            {
-              "name": "Shampoo Bottle",
-              "skipConditions": false,
-              "tags": [
-                "bottle",
-                "shampoo",
-                "shampoo bottle"
-              ]
-            },
-            {
-              "name": "Lotion Bottle",
-              "skipConditions": false,
-              "tags": [
-                "bottle",
-                "lotion",
-                "lotion bottle"
-              ]
-            },
-            {
-              "name": "Soap Dispenser",
-              "skipConditions": false,
-              "tags": [
-                "dispenser",
-                "soap",
-                "soap dispenser"
-              ]
-            },
-            {
-              "name": "Toothpaste Tube",
-              "skipConditions": false,
-              "tags": [
-                "toothpaste",
-                "toothpaste tube",
-                "tube"
-              ]
-            }
-          ]
-        },
-        {
-          "id": 502,
-          "name": "Metal Items",
-          "items": [
-            {
-              "name": "Aluminum Foil",
-              "skipConditions": false,
-              "tags": [
-                "aluminum",
-                "aluminum foil",
-                "foil",
-                "metal can"
-              ]
-            },
-            {
-              "name": "Foil Tray",
-              "skipConditions": false,
-              "tags": [
-                "foil",
-                "foil tray",
-                "tray"
-              ]
-            },
-            {
-              "name": "Tin Can",
-              "skipConditions": false,
-              "tags": [
-                "aluminum",
-                "can",
-                "metal can",
-                "tin",
-                "tin can"
-              ]
-            },
-            {
-              "name": "Metal Bottle Cap",
-              "skipConditions": false,
-              "tags": [
-                "bottle",
-                "cap",
-                "metal",
-                "metal bottle cap"
-              ]
-            },
-            {
-              "name": "Metal Tin",
-              "skipConditions": false,
-              "tags": [
-                "metal",
-                "metal tin",
-                "tin"
-              ]
-            }
-          ]
-        },
-        {
-          "id": 503,
-          "name": "Glass Items",
-          "items": [
-            {
-              "name": "Glass Jar",
-              "skipConditions": false,
-              "tags": [
-                "glass",
-                "glass jar",
-                "jar"
-              ]
-            },
-            {
-              "name": "Candle Jar",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "aluminum",
-                "candle",
-                "candle jar",
-                "jar",
-                "metal can"
-              ]
-            },
-            {
-              "name": "Drinking Glass",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "drinking",
-                "drinking glass",
-                "glass"
-              ]
-            },
-            {
-              "name": "Broken Glass Bottle",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "bottle",
-                "broken",
-                "broken glass bottle",
-                "glass"
-              ]
-            }
-          ]
-        },
-        {
-          "id": 504,
-          "name": "Plastic Household Items",
-          "items": [
-            {
-              "name": "Plastic Bag",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "bag",
-                "disposable plastic",
-                "plastic",
-                "plastic bag",
-                "plastic item"
-              ]
-            },
-            {
-              "name": "Plastic Film",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "disposable plastic",
-                "film",
-                "plastic",
-                "plastic film",
-                "plastic item"
-              ]
-            },
-            {
-              "name": "Plastic Cutlery",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "cutlery",
-                "disposable plastic",
-                "plastic",
-                "plastic cutlery",
-                "plastic item"
-              ]
-            },
-            {
-              "name": "Food Storage Container",
-              "skipConditions": false,
-              "tags": [
-                "container",
-                "food",
-                "food storage container",
-                "storage"
-              ]
-            },
-            {
-              "name": "Medicine Bottle",
-              "skipConditions": false,
-              "tags": [
-                "bottle",
-                "medicine",
-                "medicine bottle"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "name": "General Plastics",
-      "itemGroups": [
-        {
-          "id": 601,
-          "name": "Plastic Items",
-          "items": [
-            {
-              "name": "Plastic Food Container",
-              "skipConditions": false,
-              "tags": [
-                "container",
-                "disposable plastic",
-                "food",
-                "plastic",
-                "plastic food container",
-                "plastic item"
-              ]
-            },
-            {
-              "name": "Plastic Lid",
-              "skipConditions": false,
-              "tags": [
-                "disposable plastic",
-                "lid",
-                "plastic",
-                "plastic item",
-                "plastic lid"
-              ]
-            },
-            {
-              "name": "Tupperware",
-              "skipConditions": false,
-              "tags": [
-                "tupperware"
-              ]
-            },
-            {
-              "name": "Plastic Bag",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "bag",
-                "disposable plastic",
-                "plastic",
-                "plastic bag",
-                "plastic item"
-              ]
-            },
-            {
-              "name": "Plastic Wrap",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "disposable plastic",
-                "plastic",
-                "plastic item",
-                "plastic wrap",
-                "wrap"
-              ]
-            },
-            {
-              "name": "Plastic Film",
-              "skipConditions": true,
-              "defaultBin": "Landfill",
-              "tags": [
-                "disposable plastic",
-                "film",
-                "plastic",
-                "plastic film",
-                "plastic item"
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "conditions": {
-    "cleanliness": [
-      "Clean / Rinsed",
-      {
-        "Liquid Inside": [
-          "Water",
-          "Other"
         ]
       },
-      "Food Bits",
-      "Sticky / Residue"
+      {
+        "id": 3,
+        "name": "Packaging & Cardboard",
+        "itemGroups": [
+          {
+            "name": "Boxes",
+            "items": [
+              {
+                "name": "Shipping Box",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "shape": "Intact" }, "bin": "Recycle" },
+                  { "if": { "shape": "Deformed" }, "bin": "Recycle" }
+                ],
+                "tags": [
+                  "shipping box",
+                  "box",
+                  "cardboard",
+                  "recycling cardboard"
+                ]
+              },
+              {
+                "name": "Cardboard Tubes",
+                "skipConditions": true,
+                "defaultBin": "Recycle",
+                "tags": [
+                  "cardboard tubes",
+                  "cardboard",
+                  "tubes"
+                ]
+              },
+              {
+                "name": "Cardboard Pieces",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "shape": "Intact" }, "bin": "Recycle" },
+                  { "if": { "shape": "Deformed" }, "bin": "Recycle" }
+                ],
+                "tags": [
+                  "cardboard pieces",
+                  "cardboard",
+                  "recycling cardboard"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Soft Plastics",
+            "items": [
+              {
+                "name": "Plastic Wrap",
+                "skipConditions": true,
+                "defaultBin": "Landfill",
+                "tags": [
+                  "plastic wrap",
+                  "wrap",
+                  "plastic",
+                  "disposable plastic"
+                ]
+              },
+              {
+                "name": "Plastic Film",
+                "skipConditions": true,
+                "defaultBin": "Landfill",
+                "tags": [
+                  "plastic film",
+                  "film",
+                  "plastic"
+                ]
+              },
+              {
+                "name": "Plastic Sheets",
+                "skipConditions": true,
+                "defaultBin": "Landfill",
+                "tags": [
+                  "plastic sheets",
+                  "plastic",
+                  "sheets"
+                ]
+              },
+              {
+                "name": "Snack Bag",
+                "skipConditions": true,
+                "defaultBin": "Landfill",
+                "tags": [
+                  "snack bag",
+                  "bag",
+                  "snack"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Bags",
+            "items": [
+              {
+                "name": "Paper Grocery Bag",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Compost" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Compost" }
+                ],
+                "tags": [
+                  "paper bag",
+                  "grocery bag",
+                  "paper grocery bag"
+                ]
+              },
+              {
+                "name": "Plastic Grocery Bag",
+                "skipConditions": true,
+                "defaultBin": "Landfill",
+                "tags": [
+                  "plastic bag",
+                  "grocery bag",
+                  "bag",
+                  "plastic"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Paper Products",
+        "itemGroups": [
+          {
+            "name": "Paper Items",
+            "items": [
+              {
+                "name": "Printer Paper",
+                "skipConditions": true,
+                "defaultBin": "Recycle",
+                "tags": [
+                  "printer paper",
+                  "paper"
+                ]
+              },
+              {
+                "name": "Shredded Paper",
+                "skipConditions": true,
+                "defaultBin": "Compost",
+                "tags": [
+                  "shredded paper",
+                  "paper",
+                  "small pieces"
+                ]
+              },
+              {
+                "name": "Magazines",
+                "skipConditions": true,
+                "defaultBin": "Recycle",
+                "tags": [
+                  "magazines",
+                  "paper"
+                ]
+              },
+              {
+                "name": "Cardstock",
+                "skipConditions": true,
+                "defaultBin": "Recycle",
+                "tags": [
+                  "cardstock",
+                  "paper"
+                ]
+              },
+              {
+                "name": "Greeting Cards",
+                "skipConditions": true,
+                "defaultBin": "Recycle",
+                "tags": [
+                  "greeting cards",
+                  "cards",
+                  "paper"
+                ]
+              },
+              {
+                "name": "Paperback Books",
+                "skipConditions": true,
+                "defaultBin": "Recycle",
+                "tags": [
+                  "paperback books",
+                  "books",
+                  "paper"
+                ]
+              },
+              {
+                "name": "Cereal Box",
+                "skipConditions": true,
+                "defaultBin": "Recycle",
+                "tags": [
+                  "cereal box",
+                  "box",
+                  "cardboard",
+                  "paperboard"
+                ]
+              },
+              {
+                "name": "Envelopes",
+                "skipConditions": true,
+                "defaultBin": "Recycle",
+                "tags": [
+                  "envelopes",
+                  "paper"
+                ]
+              },
+              {
+                "name": "Sticky Notes",
+                "skipConditions": true,
+                "defaultBin": "Recycle",
+                "tags": [
+                  "sticky notes",
+                  "notes",
+                  "paper"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "General Plastics",
+        "itemGroups": [
+          {
+            "name": "Plastic Items",
+            "items": [
+              {
+                "name": "Plastic Food Container",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Recycle" }
+                ],
+                "tags": [
+                  "plastic food container",
+                  "container",
+                  "plastic",
+                  "disposable plastic"
+                ]
+              },
+              {
+                "name": "Plastic Lid",
+                "skipConditions": false,
+                "allowedConditionValues": {
+                  "cleanliness": [
+                    "Clean / Rinsed",
+                    "Food-Soiled",
+                    "Sticky / Residue"
+                  ],
+                  "shape": [
+                    "Intact",
+                    "Deformed",
+                    "Smaller than 3 inches"
+                  ]
+                },
+                "rules": [
+                  { "if": { "shape": "Smaller than 3 inches" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Food-Soiled" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Sticky / Residue" }, "bin": "Landfill" },
+                  { "if": { "cleanliness": "Clean / Rinsed" }, "bin": "Recycle" }
+                ],
+                "tags": [
+                  "plastic lid",
+                  "lid",
+                  "plastic",
+                  "disposable plastic"
+                ]
+              },
+              {
+                "name": "Tupperware",
+                "skipConditions": true,
+                "defaultBin": "Recycle",
+                "tags": [
+                  "tupperware",
+                  "plastic container",
+                  "rigid plastic"
+                ]
+              },
+              {
+                "name": "Plastic Bag",
+                "skipConditions": true,
+                "defaultBin": "Landfill",
+                "tags": [
+                  "plastic bag",
+                  "bag",
+                  "disposable plastic"
+                ]
+              }
+            ]
+          }
+        ]
+      }
     ],
-    "shape": [
-      "Intact",
-      "Crumpled",
-      "Broken",
-      "Small Pieces (<3 inches)"
-    ],
-    "item_specific": {
-      "Aluminum Can": [
-        "Flattened"
+    "conditions": {
+      "cleanliness": [
+        "Clean / Rinsed",
+        "Food-Soiled",
+        "Sticky / Residue"
       ],
-      "Glass Beverage Bottle": [
-        "Broken"
-      ],
-      "Broken Glass Bottle": [
-        "Shattered"
-      ],
-      "Plastic Water Bottle": [
-        "Cap On",
-        "Cap Off"
-      ],
-      "Plastic Drink Cup": [
-        "Straw Attached",
-        "Lid Attached"
-      ],
-      "Paper Cup": [
-        "Lined",
-        "Unlined"
-      ],
-      "Pizza Box": [
-        "Greasy"
-      ],
-      "Shipping Box": [
-        "Wet"
-      ],
-      "Cardboard Pieces": [
-        "Small Pieces (<3 inches)"
-      ],
-      "Shredded Paper": [
-        "Small Pieces (<3 inches)"
-      ],
-      "Snack Bag": [
-        "Foil-Lined"
-      ],
-      "Candle Jar": [
-        "Wax Residue"
-      ],
-      "Drinking Glass": [
-        "Chipped"
-      ],
-      "Envelope": [
-        "Plastic Window"
-      ],
-      "Greeting Cards": [
-        "Glitter",
-        "Foil Decoration"
+      "shape": [
+        "Intact",
+        "Deformed",
+        "Smaller than 3 inches"
       ]
     }
   }
-}
+  
