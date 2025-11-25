@@ -3,7 +3,7 @@
 /*General page layout*/
 .quiz-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #182d74, #0ea5e9); 
+  background: linear-gradient(135deg, #308d81, #11913b); 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,6 +126,7 @@
   font-size: 1rem;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
   box-shadow: 0 0 8px rgba(255,255,255,0.3);
+  outline: 0.05rem solid #000;
 }
 
 .quiz-button:hover {
@@ -141,7 +142,7 @@
 }
 
 .quiz-button.recycle {
-  background: #1ca14d;
+  background: #15bb52;
   color: #fff;
   box-shadow: 0 0 10px #22c55e;
 }
@@ -309,7 +310,7 @@
 .progress-button {
   margin: 1rem auto 2rem auto;
   display: block;
-  background: #0E1C4A;
+  background: #103e5c;
   color: #fff;
   border-radius: 0.75rem;
   padding: 1rem 1rem;
