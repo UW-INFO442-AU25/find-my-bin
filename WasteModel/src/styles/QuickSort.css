@@ -1,0 +1,224 @@
+/* ========================================
+   QUICK SORT STYLES
+======================================== */
+
+.qs-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.qs-title,
+.qs-description {
+  text-align: center;
+}
+
+.qs-panel {
+  background: white;
+  border: 1.5px solid #d0e6db;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 1.5rem auto;
+  padding: 2rem 3rem 3rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Back - Recommendation - Start Over */
+.qs-top-bar {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  padding-top: 0.5rem;
+}
+
+.qs-back,
+.qs-start-over {
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: white;
+  color: #0b4f33;
+  border: 1.5px solid #0b4f33;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.qs-back:hover,
+.qs-start-over:hover {
+  background: #e9f5ef;
+  transform: translateY(-1px);
+}
+
+/* Step Header*/
+
+.qs-step-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0 auto 1.25rem;
+  max-width: 550px;
+}
+
+.qs-line {
+  flex: 1;
+  height: 1.5px;
+  background: #aac2b8;
+}
+
+.qs-step-number {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0b4f33;
+}
+
+.qs-panel h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #0b4f33;
+}
+
+/* Selection Cards*/
+
+.qs-grid {
+  display: grid;
+  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.qs-card {
+  background: #ffffff;
+  border: 1.5px solid #aeafb1;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000000;
+  padding: 2.2rem 1rem;
+  min-height: 120px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.qs-card:hover {
+  border-color: #494949;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+/* Condition Card Styling */
+.qs-card.selected {
+  border-color: #0b4f33;
+  background: #e8f4ef;
+  color: #0b4f33;
+  font-weight: 700;
+  box-shadow: 0 3px 8px rgba(11,79,51,0.25);
+}
+
+/* Finish button */
+.qs-button {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 1.2rem 1.2rem;
+  background: #0b4f33;
+  color: #eafff0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 3px 8px rgba(11, 79, 51, 0.25);
+  transition: all 0.15s ease;
+}
+
+.qs-button:hover {
+  background: #095a38;
+  transform: translateY(-1px);
+}
+
+/* Bin Recommendation */
+
+.qs-recommend-title {
+  font-size: 2rem;
+  color: #0b4f33;
+  margin: 0;
+}
+.qs-result-card .qs-bin-heading {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0b4f33;
+}
+
+.qs-bin-img {
+  width: 200px;
+  margin: 1rem auto 2rem auto;
+  display: block;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.14));
+}
+
+.qs-result-card .qs-item-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #08321f;
+}
+
+.qs-item-conditions {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #275f45;
+  margin-bottom: 1.4rem;
+  text-align: center;
+}
+
+.qs-explanation {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #08321f;
+  background: #eef9f3;
+  border: 1.5px solid #d8ede2;
+  padding: 1rem 1.4rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 760px;
+  margin: auto;
+}
+
+/* Breadcrumb Navigation */
+
+.qs-breadcrumbs {
+  font-size: 1.2rem;
+  color: #0b4f33;
+  margin: 0 auto 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.qs-breadcrumb-link {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: #0b4f33;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.qs-breadcrumb-link:hover {
+  opacity: 0.75;
+}

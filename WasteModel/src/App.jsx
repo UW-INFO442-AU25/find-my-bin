@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Quiz from './pages/Quiz';
+import QuickSort from './pages/QuickSort';
 import '../src/index.css';
 import './App.css';
 
@@ -20,6 +21,7 @@ function App({ children }) {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/quick-sort" element={<QuickSort />} />
         </Routes>
         <Footer />
         {children || null}
