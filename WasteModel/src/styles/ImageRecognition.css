@@ -250,9 +250,42 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .upload-card {
+    margin-top: 20px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .results-layout {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 768px) {
+  .upload-card {
+    margin-top: 16px;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .section-sub {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .upload-form {
+    margin-bottom: 24px;
+  }
+
   .results-layout {
     grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 16px;
   }
 
   .upload-actions {
@@ -262,6 +295,38 @@
   .primary-btn,
   .secondary-btn {
     width: 100%;
+  }
+
+  .preview-panel,
+  .predictions-panel {
+    padding: 16px;
+  }
+
+  .panel-title {
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+
+  .preview-image {
+    max-height: 350px;
+  }
+
+  .top-prediction-card {
+    padding: 16px;
+  }
+
+  .top-value {
+    font-size: 1.3rem;
+  }
+
+  .top-confidence {
+    font-size: 0.95rem;
+  }
+
+  .predictions-header,
+  .prediction-row {
+    padding: 10px 14px;
+    font-size: 14px;
   }
 }
 
@@ -274,6 +339,10 @@
     padding: 20px;
   }
 
+  .upload-card {
+    margin-top: 12px;
+  }
+
   .feature-title {
     font-size: 1.5rem;
   }
@@ -282,7 +351,94 @@
     font-size: 1.25rem;
   }
 
+  .section-sub {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .upload-label-text {
+    font-size: 0.9rem;
+  }
+
+  .file-input {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .error-text {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .results-layout {
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .preview-panel,
+  .predictions-panel {
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .panel-title {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  .preview-image {
+    max-height: 300px;
+    border-radius: 6px;
+  }
+
+  .preview-placeholder {
+    height: 180px;
+    font-size: 13px;
+  }
+
+  .top-prediction-card {
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .top-label {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
   .top-value {
     font-size: 1.2rem;
+  }
+
+  .top-confidence {
+    font-size: 0.9rem;
+  }
+
+  .predictions-content {
+    gap: 16px;
+  }
+
+  .predictions-header,
+  .prediction-row {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .prediction-label {
+    font-size: 13px;
+  }
+
+  .prediction-confidence {
+    font-size: 13px;
+  }
+
+  .muted-text {
+    font-size: 13px;
   }
 }

@@ -175,13 +175,6 @@ export default function ImageRecognition() {
         <div className="mode-toggle">
           <button
             type="button"
-            className={`mode-btn ${!useCamera ? "active" : ""}`}
-            onClick={() => setUseCamera(false)}
-          >
-            Upload
-          </button>
-          <button
-            type="button"
             className={`mode-btn ${useCamera ? "active" : ""}`}
             onClick={() => setUseCamera(true)}
           >

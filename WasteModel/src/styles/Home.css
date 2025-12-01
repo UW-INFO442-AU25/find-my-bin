@@ -516,6 +516,7 @@
     flex-direction: column;
     padding: 80px 20px 100px;
     text-align: center;
+    gap: 40px;
   }
 
   .hero-visual {
@@ -530,27 +531,83 @@
   .hero-buttons {
     justify-content: center;
   }
+
+  .features-grid,
+  .stats-grid {
+    gap: 25px;
+  }
+
+  .sdg-section,
+  .features-section,
+  .info-section,
+  .cta-section {
+    padding: 60px 20px;
+  }
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 20px 80px;
+    min-height: 500px;
+  }
+
   .hero-title {
     font-size: 40px;
+    margin-bottom: 15px;
   }
 
   .hero-subtitle {
     font-size: 20px;
   }
 
+  .hero-description {
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
+
   .hero-visual {
     display: none;
+  }
+
+  .hero-badge {
+    font-size: 13px;
+    padding: 7px 18px;
+  }
+
+  .btn-primary-hero,
+  .btn-secondary-hero {
+    padding: 14px 28px;
+    font-size: 15px;
   }
 
   .section-title {
     font-size: 32px;
   }
 
+  .section-subtitle {
+    font-size: 16px;
+  }
+
+  .sdg-section,
+  .features-section,
+  .info-section {
+    padding: 50px 20px;
+  }
+
+  .sdg-header {
+    margin-bottom: 40px;
+  }
+
+  .sdg-icon {
+    font-size: 52px;
+  }
+
   .sdg-header h2 {
     font-size: 28px;
+  }
+
+  .sdg-header h3 {
+    font-size: 20px;
   }
 
   .sdg-grid,
@@ -558,10 +615,25 @@
   .stats-grid,
   .info-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .sdg-card,
+  .feature-card {
+    padding: 30px 25px;
+  }
+
+  .stats-section,
+  .cta-section {
+    padding: 60px 20px;
   }
 
   .cta-content h2 {
     font-size: 32px;
+  }
+
+  .cta-content p {
+    font-size: 17px;
   }
 
   .cta-buttons {
@@ -573,29 +645,177 @@
     width: 100%;
     max-width: 300px;
   }
+
+  .info-content h3 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .youtube-wrapper iframe {
+    height: 350px;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    padding: 40px 16px 60px;
+    min-height: 450px;
+  }
+
   .hero-title {
     font-size: 32px;
+    line-height: 1.2;
   }
 
   .hero-subtitle {
     font-size: 18px;
+    margin-bottom: 12px;
   }
 
   .hero-description {
     font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .hero-badge {
+    font-size: 12px;
+    padding: 6px 16px;
+    margin-bottom: 16px;
   }
 
   .btn-primary-hero,
   .btn-secondary-hero {
     width: 100%;
     text-align: center;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .sdg-section,
+  .features-section,
+  .stats-section,
+  .info-section,
+  .cta-section {
+    padding: 40px 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+
+  .sdg-header {
+    margin-bottom: 30px;
+  }
+
+  .sdg-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .sdg-header h2 {
+    font-size: 24px;
+  }
+
+  .sdg-header h3 {
+    font-size: 18px;
+  }
+
+  .sdg-card {
+    padding: 30px 20px;
+  }
+
+  .sdg-card-icon {
+    font-size: 42px;
+  }
+
+  .sdg-card h4 {
+    font-size: 20px;
+  }
+
+  .sdg-card p {
+    font-size: 15px;
+  }
+
+  .feature-card {
+    padding: 30px 20px;
+  }
+
+  .feature-icon {
+    font-size: 48px;
+  }
+
+  .feature-card h3 {
+    font-size: 22px;
+  }
+
+  .feature-card p {
+    font-size: 15px;
+  }
+
+  .stats-grid {
+    gap: 30px;
   }
 
   .stat-number {
     font-size: 42px;
+  }
+
+  .stat-label {
+    font-size: 16px;
+  }
+
+  .cta-section {
+    padding: 60px 16px;
+  }
+
+  .cta-content h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .cta-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .btn-cta-primary,
+  .btn-cta-secondary {
+    padding: 14px 32px;
+    font-size: 16px;
+  }
+
+  .info-content h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .info-emoji {
+    font-size: 42px;
+    margin-bottom: 12px;
+  }
+
+  .info-item p {
+    font-size: 14px;
+  }
+
+  .youtube-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .youtube-wrapper iframe {
+    height: 250px;
+    border-radius: 8px;
   }
 }
 
