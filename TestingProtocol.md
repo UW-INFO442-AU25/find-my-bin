@@ -26,7 +26,7 @@
 </ul>
 
 <b>Bin Recommendation Page</b>
-<ul><li>The correct bin (Recycle, Compost, or Landfill) should appear with the proper color and image.</li><li>The displayed item and description should match the user’s selections.</li><li>Breadcrumb navigation should accurately reflect the completed path.</li>
+<ul><li>The correct bin (Recycle, Compost, or Landfill) should appear with the proper color and image.</li><li>The displayed item and description should match the user’s selections.</li><li>Breadcrumb navigation should accurately reflect the completed path.</li><li>Start over button should bring user back to Step 1.</li>
 </ul>
 
 ## Testing for AI Image Recognition
@@ -38,8 +38,8 @@
 <b>Run Model</b>
 <ul><li>The AI model should process the image without errors.</li></ul>
 <b>Check Predictions</b>
-<ul><li>The item should be correctly identified.</li> 
-<li>Predicted labels should appear.</li> 
+<ul>
+<li>Predicted labels based on the item should appear.</li> 
 </ul>
 
 ## Testing for Quiz
