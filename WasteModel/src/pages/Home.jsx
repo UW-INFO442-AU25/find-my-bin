@@ -61,7 +61,7 @@ export default function Home() {
               <p>
                 Consumers often lack clarity on which bin to use at waste sorting stations.
                 This uncertainty leads to contamination when recyclables are mixed with
-                inappropriate materials, causing entire batches to be rejected and sent to landfills.
+                inappropriate materials which causes entire batches to be rejected and sent to landfills.
               </p>
             </div>
 
@@ -69,9 +69,9 @@ export default function Home() {
               <div className="sdg-card-icon">💡</div>
               <h4>Our Solution</h4>
               <p>
-                Find My Bin reduces uncertainty by providing clear guidance on waste disposal,
-                helping you confidently place items in the correct bin and prevent contamination
-                in the recycling stream.
+                Find My Bin reduces uncertainty by providing clear guidance on waste disposal that
+                helps you confidently place items in the correct bin and prevent contamination
+                in the recycling process.
               </p>
             </div>
 
@@ -109,7 +109,7 @@ export default function Home() {
             <h3>AI Waste Recognition</h3>
             <p>
               Upload a photo and let our AI identify the material and recommend the correct bin.
-              Fast, accurate, and perfect for tricky items.
+              Fast, accurate, and convenient for tricky items.
             </p>
             <span className="feature-link">Try AI Sort →</span>
           </Link>
