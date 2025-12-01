@@ -4,3 +4,5 @@ numpy
 fastapi
 uvicorn[standard]
 python-multipart
+pillow
+torch         # or torch==2.3.0+cpu if you want to pin, but this is big
