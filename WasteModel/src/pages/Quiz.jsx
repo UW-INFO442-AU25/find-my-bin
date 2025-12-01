@@ -19,6 +19,8 @@ import {
 import "../styles/Quiz.css";
 import "../App.css";
 
+import itemDataset from "../data/item_dataset.json";
+
 const POINT_TIERS = [
   { sec: 5, pts: 100 },
   { sec: 10, pts: 75 },
@@ -93,17 +95,32 @@ export default function Quiz() {
   // --------------- dataset loader ---------------
   useEffect(() => {
     mountedRef.current = true;
-    fetch("src/data/item_dataset.json")
-      .then((res) => res.json())
-      .then((raw) => {
-        const list = [];
-        let nextId = 1000;
 
-        if (raw?.categories) {
-          for (const cat of raw.categories) {
-            for (const group of cat.itemGroups || []) {
-              if (group.items) {
-                for (const item of group.items) {
+    try {
+      const raw = itemDataset; // already parsed JSON from the import
+      const list = [];
+      let nextId = 1000;
+
+      if (raw?.categories) {
+        for (const cat of raw.categories) {
+          for (const group of cat.itemGroups || []) {
+            if (group.items) {
+              for (const item of group.items) {
+                list.push({
+                  id: nextId++,
+                  name: item.name,
+                  skipConditions: !!item.skipConditions,
+                  allowedConditionValues: item.allowedConditionValues || null,
+                  rules: item.rules || null,
+                  defaultBin: item.defaultBin || item.default || null,
+                  tags: item.tags || [],
+                  _raw: item,
+                });
+              }
+            }
+            if (group.materials) {
+              for (const matName of Object.keys(group.materials)) {
+                for (const item of group.materials[matName]) {
                   list.push({
                     id: nextId++,
                     name: item.name,
@@ -116,39 +133,25 @@ export default function Quiz() {
                   });
                 }
               }
-              if (group.materials) {
-                for (const matName of Object.keys(group.materials)) {
-                  for (const item of group.materials[matName]) {
-                    list.push({
-                      id: nextId++,
-                      name: item.name,
-                      skipConditions: !!item.skipConditions,
-                      allowedConditionValues: item.allowedConditionValues || null,
-                      rules: item.rules || null,
-                      defaultBin: item.defaultBin || item.default || null,
-                      tags: item.tags || [],
-                      _raw: item,
-                    });
-                  }
-                }
-              }
             }
           }
         }
+      }
 
-        if (!mountedRef.current) return;
-        setItems(list);
+      if (!mountedRef.current) return;
+      setItems(list);
 
-        // pick first question and generate randomized conditions for it
-        if (list.length > 0) {
-          const firstRaw = pickRandomFrom(list);
-          const q = generateQuestion(firstRaw);
-          setCurrent(q);
-          questionStartRef.current = Date.now();
-          startCountdown();
-        }
-      })
-      .catch((err) => console.error("Failed to load dataset:", err));
+      // pick first question and generate randomized conditions for it
+      if (list.length > 0) {
+        const firstRaw = pickRandomFrom(list);
+        const q = generateQuestion(firstRaw);
+        setCurrent(q);
+        questionStartRef.current = Date.now();
+        startCountdown();
+      }
+    } catch (err) {
+      console.error("Failed to load dataset:", err);
+    }
 
     // cleanup on unmount
     return () => {
@@ -156,7 +159,6 @@ export default function Quiz() {
       clearInterval(intervalRef.current);
     };
   }, []);
-
   // --------------- auth / lifetime ---------------
   useEffect(() => {
     if (!user) {
