@@ -54,6 +54,14 @@ export default function Home() {
             <h3>Responsible Consumption and Production</h3>
           </div>
 
+          <div className="youtube-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/UbwvNmkjbNE"
+              title="The Right Bin Matters - Recycling Contamination"
+              allowFullScreen
+            ></iframe>
+          </div>
+
           <div className="sdg-grid">
             <div className="sdg-card">
               <div className="sdg-card-icon">⚠️</div>
@@ -130,7 +138,7 @@ export default function Home() {
       <section className="stats-section">
         <div className="stats-grid">
           <div className="stat-item">
-            <div className="stat-number">75%</div>
+            <div className="stat-number">25%</div>
             <div className="stat-label">of recyclables are contaminated</div>
           </div>
           <div className="stat-item">
