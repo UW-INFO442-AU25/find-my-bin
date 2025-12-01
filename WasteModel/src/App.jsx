@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Quiz from './pages/Quiz';
 import QuickSort from './pages/QuickSort';
+import ImageRecognition from './pages/ImageRecognition';
 import '../src/index.css';
 import './App.css';
 
@@ -22,6 +23,7 @@ function App({ children }) {
           <Route path="/signup" element={<Signup />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/quick-sort" element={<QuickSort />} />
+          <Route path="/image-recognition" element={<ImageRecognition />} />
         </Routes>
         <Footer />
         {children || null}

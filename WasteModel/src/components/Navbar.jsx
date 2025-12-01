@@ -27,6 +27,9 @@ export default function Navbar() {
             <Link className="nav-link" to="/">Home</Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" to="/image-recognition">Image Recognition</Link>
+          </li>
+          <li className="nav-item">
             <Link className="nav-link" to="/quick-sort">Quick Sort</Link>
           </li>
           <li className="nav-item">
