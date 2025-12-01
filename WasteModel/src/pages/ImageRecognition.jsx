@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/ImageRecognition.css';
 
-const API_URL = 'http://localhost:8000/predict';
-// ^ change this if your FastAPI server is running elsewhere
+const API_URL =
+  import.meta.env.VITE_API_URL || 'http://localhost:8000/predict';
+
 
 export default function ImageRecognition() {
   const [file, setFile] = useState(null);
