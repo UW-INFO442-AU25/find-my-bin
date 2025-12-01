@@ -33,7 +33,7 @@
 
 <b>Upload an Image</b>
 
-<ul><li>Clicking Choose File should open a file selector.</li>
+<ul><li>Clicking Choose File should open a file selector, using the Camera will allow you to take a picture on a device.</li>
 <li>A preview of the chosen image should appear.</li></ul>
 <b>Run Model</b>
 <ul><li>The AI model should process the image without errors.</li></ul>
