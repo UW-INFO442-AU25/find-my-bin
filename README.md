@@ -2,7 +2,7 @@
 
 Find My Bin helps users quickly identify the correct waste bins for everyday items by providing fast item recognition with simple, interactive learning that develops long-term sorting habits and reduces uncertainty at sorting stations. By making disposal choices clearer and more intuitive, it reduces recycling contamination, supports responsible consumption, and encourages more sustainable practices. 
 
-[https://find-my-bin-front.onrender.com/](url)
+[https://find-my-bin-front.onrender.com/](https://find-my-bin-front.onrender.com/)
 
 ## Features
 
